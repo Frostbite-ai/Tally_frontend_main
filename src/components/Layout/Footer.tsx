@@ -13,7 +13,7 @@ export default function Footer() {
     >
       <div className='flex w-full items-center justify-between font-primary'>
         <UnstyledLink
-          href='https://github.com/steven2801/monkeytype-clone'
+          href='https://github.com/Frostbite-ai/Tally_frontend_main'
           className='flex cursor-pointer items-center space-x-1.5 text-sm text-fg/50 transition-colors duration-200 hover:text-fg'
         >
           <FaCode />
