@@ -22,14 +22,12 @@ This project was bootstrapped with [this template](https://github.com/theodorusc
 
 ## Screenshots
 
+![Desktop Screenshot 1](https://i.ibb.co/VJ85xNr/image.png)
 
+<details>
+  <summary>Click to expand!</summary>
   
-  ![Desktop Screenshot 1](https://i.ibb.co/VJ85xNr/image.png)
-  
-  <details>
-    <summary>Click to expand!</summary>
-	  ![Desktop Screenshot 2](https://i.ibb.co/VJ85xNr/image.png)
-
+  ![Desktop Screenshot 2](https://i.ibb.co/VJ85xNr/image.png)
 </details>
 
 ## Setup
@@ -45,7 +43,21 @@ git clone https://github.com/Frostbite-ai/Tally_frontend_main.git
 cd Tally_frontend_main
 yarn install
 ```
-3. Start the development server
+3. Create a `.env` file in the root directory and set the following environment variables:
+
+```bash
+NEXTAUTH_URL = # The base URL of your site (e.g., 'http://localhost:3000' for local development)
+NEXTAUTH_SECRET = # A secret used to encrypt session data on the server (use a long random string)
+NEXT_PUBLIC_API_URL = # The URL of your API server (if different from your Next.js site)
+DATABASE_URL = # The connection string of your PostgreSQL database
+NEXT_PUBLIC_SOCKET_URL = # The URL of your socket server for real-time updates in multiplayer mode
+GOOGLE_CLIENT_SECRET = # The client secret of your Google OAuth application for Gmail login
+GOOGLE_CLIENT_ID = # The client ID of your Google OAuth application for Gmail login
+```
+
+Please replace the comments after `=` with your actual values. For example, if your base URL is 'http://localhost:3000', you would write `NEXTAUTH_URL = 'http://localhost:3000'`.
+
+4. Start the development server
 ```bash
 yarn dev
 ```
