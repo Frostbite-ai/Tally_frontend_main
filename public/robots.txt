@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://monkeytype-clone.vercel.app
-
-# Sitemaps
-Sitemap: https://monkeytype-clone.vercel.app/sitemap.xml
