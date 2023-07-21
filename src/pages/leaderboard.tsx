@@ -40,15 +40,7 @@ export default function LeaderboardPage() {
               <ArrowLink direction='left' className='my-4 text-hl' href='/'>
                 home
               </ArrowLink>
-              {!user && (
-                <Link href='/account'>
-                  <a>
-                    <div className='hover:text-bg-90 rounded-sm bg-fg px-2 py-1 font-primary text-xs leading-5 text-bg transition-colors duration-200 hover:bg-fg/90'>
-                      tip: sign in to save your stats
-                    </div>
-                  </a>
-                </Link>
-              )}
+              
             </div>
             <h1 className='my-4 text-hl'>leaderboard</h1>
             {/* <div className='mb-4 flex space-x-2 font-primary'>
