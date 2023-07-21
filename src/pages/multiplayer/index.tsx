@@ -129,7 +129,7 @@ export default function MultiplayerPage() {
                     [mode === 'words' ? 'text-hl ring-2 ring-fg' : 'text-hl']
                   )}
                 >
-                  Hard
+                  Easy
                 </button>
                 <button
                   onClick={() =>

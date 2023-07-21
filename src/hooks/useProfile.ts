@@ -9,10 +9,6 @@ type UserPayload = {
   createdAt: string;
 };
 
-type ProfileStatsPayload = {
-  best: LeaderboardPayload[];
-  recent: LeaderboardPayload[];
-};
 
 export const getCurrentUser = async (): Promise<UserPayload | null> => {
   const res = await fetch(`${API_URL}/currentUser`);
@@ -22,13 +18,7 @@ export const getCurrentUser = async (): Promise<UserPayload | null> => {
   return res.json();
 };
 
-const getProfileStats = async (): Promise<ProfileStatsPayload> => {
-  const res = await fetch(`${API_URL}/profile`);
-  if (!res.ok) {
-    throw new Error('An error occurred while fetching the data.');
-  }
-  return res.json();
-};
+
 
 const useProfile = () => {
   const {
@@ -37,7 +27,7 @@ const useProfile = () => {
     mutate,
   } = useSWR('getCurrentUser', getCurrentUser);
 
-  const { data: profileStats } = useSWR('getProfileStats', getProfileStats);
+  const { data: profileStats } = useSWR('getProfileStats');
 
   const clearUser = () => mutate(null, false);
 
