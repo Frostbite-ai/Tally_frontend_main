@@ -14,7 +14,6 @@ import CommandPalette from '@/components/CommandPalette/CommandPalette';
 import Header from '@/components/Layout/Header';
 import Layout from '@/components/Layout/Layout';
 
-import { ChatProvider } from '@/context/Chat/ChatContext';
 import PreferenceProvider from '@/context/Preference/PreferenceContext';
 import { RoomProvider } from '@/context/Room/RoomContext';
 
@@ -46,11 +45,9 @@ function MyApp({
           />
           <Header />
           <RoomProvider>
-            <ChatProvider>
               <AnimatePresence exitBeforeEnter>
                 <Component {...pageProps} key={router.route} />
               </AnimatePresence>
-            </ChatProvider>
           </RoomProvider>
         </Layout>
       </SessionProvider>

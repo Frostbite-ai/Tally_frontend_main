@@ -1,12 +1,7 @@
 const commands = [
   
  
-  {
-    icon: '',
-    commandName: 'exit',
-    contents: [],
-    description: '- quit command palette',
-  },
+  "help",
 ];
 
 export type CommandType = typeof commands[number];
