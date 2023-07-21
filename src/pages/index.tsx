@@ -7,7 +7,6 @@ import Typed from 'react-typed';
 
 import Button from '@/components/Button/Button';
 import Input from '@/components/Input';
-import Kbd from '@/components/Kbd';
 import AnimateFade from '@/components/Layout/AnimateFade';
 import Seo from '@/components/Seo';
 

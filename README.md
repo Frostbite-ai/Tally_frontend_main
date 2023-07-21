@@ -7,7 +7,6 @@ Welcome to our Keyboard Kombat App, a project developed for the Tally Codebrewer
 - **Solo Mode**: Practice your typing skills alone and track your progress.
 - **Multiplayer Mode**: Compete against other players in real-time.
 - **Leaderboard**: See how you stack up against other solo record holders.
-- **Login with Gmail**: Keep track of your progress and compete with friends.
 - **Customizable Themes**: Choose a theme that suits your style.
 - **Typing Modes**: Choose from various typing modes similar to Monkeytype.
 
