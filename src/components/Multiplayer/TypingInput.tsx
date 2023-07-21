@@ -8,7 +8,6 @@ import { useRoomContext } from '@/context/Room/RoomContext';
 
 import Players from './Players';
 import Code from './RoomCode';
-import ChatBox from '../Chat/ChatBox';
 
 type TypingInputProps = React.ComponentPropsWithRef<'input'>;
 
@@ -29,7 +28,6 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
         text,
         isPlaying,
         isFinished,
-        isChatOpen,
         socket,
         winner,
         mode,
@@ -157,11 +155,7 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
       <>
         <div className='relative bottom-[5.5rem] flex w-full max-w-[950px] items-center justify-between'>
           <Code />
-          <ChatBox
-            isRoomChat
-            className='right-3 w-[calc(100%+2rem)] sm:right-2'
-            label='chat'
-          />
+
         </div>
         <Players />
 
@@ -216,19 +210,7 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
                   return e.target.value;
                 });
               }}
-              onKeyDown={(e) => {
-                if (isOpen || isChatOpen) {
-                  setIsFocused(false);
-                  return;
-                }
-                if (e.ctrlKey) return;
-                if (
-                  ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(
-                    e.key
-                  )
-                )
-                  e.preventDefault();
-              }}
+
             />
             <div
               className={clsx(
