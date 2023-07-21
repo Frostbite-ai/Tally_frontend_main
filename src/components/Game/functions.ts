@@ -12,7 +12,6 @@ export const shuffleList = (type: string) => {
     case 'numbers':
       return _.shuffle(numbers).slice(0, 50);
     case 'sentences':
-      // eslint-disable-next-line no-case-declarations
       let sentencesArray = _.shuffle(sentences);
       sentencesArray = sentencesArray.slice(0, 12);
       return sentencesArray;

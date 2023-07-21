@@ -14,17 +14,13 @@ import TableSkeleton from '@/components/Leaderboard/TableSkeleton';
 import ArrowLink from '@/components/Link/ArrowLink';
 import Seo from '@/components/Seo';
 
-// English.
 TimeAgo.addLocale(en);
 
 export default function LeaderboardPage() {
-  // todo: Get all leaderboards
-  // todo: Get daily leaderboards
 
   const { user } = useProfile();
   const { daily, allTime, isLoading } = useLeaderboard();
 
-  // Create formatter (English).
   const timeAgo = new TimeAgo('en-US');
 
   const [selected, setSelected] = React.useState('daily');
@@ -43,7 +39,7 @@ export default function LeaderboardPage() {
               
             </div>
             <h1 className='my-4 text-hl'>leaderboard</h1>
-            {/* <div className='mb-4 flex space-x-2 font-primary'>
+            <div className='mb-4 flex space-x-2 font-primary'>
               <button
                 onClick={() => setSelected('daily')}
                 className={clsx(
@@ -124,7 +120,7 @@ export default function LeaderboardPage() {
                     )}
                 </tbody>
               </table>
-            </div> */}
+            </div>
           </div>
         </section>
       </main>

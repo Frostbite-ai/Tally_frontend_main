@@ -18,6 +18,9 @@ import useProfile from '@/hooks/useProfile';
 import { usePreferenceContext } from '@/context/Preference/PreferenceContext';
 
 const typeList = ['words', 'sentences', 'numbers'];
+const displayList = ['Easy', 'Medium', 'Hard'];
+
+
 
 const timeList = ['15', '30', '45', '60', '120'];
 
@@ -42,23 +45,10 @@ export default function Header() {
           <Link href='/'>
             <a>
               <div className='flex space-x-1'>
-                {/* <TbKeyboard
-                  className={clsx(
-                    'transition-colors duration-200 group-hover:text-hl',
-                    [pathname === '/' ? 'text-hl' : 'text-hl/60'],
-                    'text-4xl'
-                  )}
-                /> */}
+
 
                 <div className='relative text-3xl font-bold text-fg'>
-                  {/* <div
-                    className={clsx(
-                      'absolute -top-3 left-0 text-[8px] transition-colors duration-200 group-hover:text-fg',
-                      [pathname === '/' ? 'text-fg' : 'text-fg/60']
-                    )}
-                  >
-                    just a clone of j
-                  </div> */}
+
                   <span
                     className={clsx(
                       'transition-colors duration-200 group-hover:text-hl',
@@ -95,7 +85,7 @@ export default function Header() {
 
 
 
-            
+
 
 
             <div className='relative'>
@@ -168,14 +158,14 @@ export default function Header() {
           </div>
           <div className='hidden flex-col -space-y-1 sm:space-y-1 ns:flex'>
             <div className='flex cursor-pointer list-none space-x-1.5 text-[10px] font-semibold sm:text-xs'>
-              {typeList.map((item) => (
+              {typeList.map((item, index) => (
                 <div
                   onClick={() => dispatch({ type: 'SET_TYPE', payload: item })}
                   key={item}
                   className={`${item === type ? 'text-hl' : 'text-hl/50'
                     } transition-colors duration-200 hover:text-hl`}
                 >
-                  {item}
+                  {displayList[index]}
                 </div>
               ))}
             </div>

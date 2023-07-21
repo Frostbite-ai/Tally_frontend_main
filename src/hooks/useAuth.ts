@@ -11,17 +11,13 @@ export const getUser = async () => {
 
 const useAuth = () => {
   const { data } = useSession();
-
   const { clearUser } = useProfile();
-
   const { isValidating, error } = useSWR('getUser', getUser, {
     fallbackData: data,
   });
-
   const logout = () => {
     signOut({ redirect: false }).then(() => clearUser());
   };
-
   const login = () => signIn('google');
 
   return { isValidating, error, logout, login };

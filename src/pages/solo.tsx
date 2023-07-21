@@ -23,14 +23,6 @@ export default function SoloPage() {
                 <Kbd>enter</Kbd> */}
                 <span className='text-hl'> to restart test </span>
               </div>
-              <div className='flex items-center space-x-2 text-sm'>
-                <Kbd>ctrl/cmd</Kbd>
-                <span className='text-hl'> + </span>
-                <Kbd>k</Kbd>
-                {/* <span className='text-hl'> or </span>
-                <Kbd>p</Kbd> */}
-                <span className='text-hl'> to open command palette </span>
-              </div>
             </div>
           </div>
         </section>

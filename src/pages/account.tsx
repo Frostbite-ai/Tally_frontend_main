@@ -34,7 +34,7 @@ export default function AccountPage() {
         <section>
           <div className={clsx('layout min-h-[65vh] pt-10 font-primary')}>
             <ArrowLink direction='left' className='my-4 text-hl' href='/'>
-              back to home
+              home
             </ArrowLink>
             <h1 className='mb-4'>account</h1>
 

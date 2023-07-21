@@ -7,7 +7,6 @@ import AnimateFade from '@/components/Layout/AnimateFade';
 import Multiplayer from '@/components/Multiplayer/Multiplayer';
 import Seo from '@/components/Seo';
 
-import { useChatContext } from '@/context/Chat/ChatContext';
 import { useRoomContext } from '@/context/Room/RoomContext';
 import { Player } from '@/context/Room/types';
 
@@ -18,7 +17,6 @@ export default function MultiplayerPage() {
     resetTime,
   } = useRoomContext();
 
-  const { dispatch: chatDispatch } = useChatContext();
 
   const router = useRouter();
 
@@ -26,7 +24,6 @@ export default function MultiplayerPage() {
     if (user.id && router?.query?.id) {
       socket.emit('join room', { roomId: router?.query?.id, user });
       dispatch({ type: 'SET_ROOM_ID', payload: router?.query?.id as string });
-      chatDispatch({ type: 'CLEAR_ROOM_CHAT' });
 
       socket.off('room update').on('room update', (players: Player[]) => {
         dispatch({ type: 'SET_PLAYERS', payload: players });

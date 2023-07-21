@@ -3,6 +3,7 @@ import * as React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { IoMdPerson } from 'react-icons/io';
 import { RiTeamFill } from 'react-icons/ri';
+import Typed from 'react-typed'; 
 
 import Button from '@/components/Button/Button';
 import Input from '@/components/Input';
@@ -32,8 +33,14 @@ export default function HomePage() {
               
             </div>
 
-            <h1 className='mb-2'>Keyboard Kombat</h1>
-
+  <div className="text-4xl font-bold text-center pt-24">
+    <Typed
+      strings={['Welcome to Keyboard Kombat 🕹', 'Crushing the bytes in Tally Codebrewers 2023']}
+      typeSpeed={40}
+      backSpeed={50}
+      loop
+    />
+  </div>
             <FormProvider {...methods}>
               <Input
                 placeholder='enter your nickname'
@@ -71,18 +78,9 @@ export default function HomePage() {
             <div className='flex flex-col items-center justify-center gap-2 font-primary'>
               <div className='flex items-center space-x-2 text-sm'>
                 <Kbd>tab</Kbd>
-                <span className='text-hl'> + </span>
-                <Kbd>enter</Kbd>
-                <span className='text-hl'> - restart test </span>
+                <span className='text-hl'> to restart test </span>
               </div>
-              <div className='flex items-center space-x-2 text-sm'>
-                <Kbd>ctrl/cmd</Kbd>
-                <span className='text-hl'> + </span>
-                <Kbd>k</Kbd>
-                <span className='text-hl'> or </span>
-                <Kbd>p</Kbd>
-                <span className='text-hl'> - command palette </span>
-              </div>
+
             </div>
           </div>
         </section>

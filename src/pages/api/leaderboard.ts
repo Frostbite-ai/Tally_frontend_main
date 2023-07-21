@@ -13,10 +13,7 @@ export default async function handler(
     const session = await unstable_getServerSession(req, res, authOptions);
     switch (req.method) {
       case 'GET':
-        // eslint-disable-next-line no-case-declarations
-        const yesterday = new Date(new Date(). getTime() - (24 * 60 * 60 * 1000));
-
-        // eslint-disable-next-line no-case-declarations
+        const yesterday = new Date(new Date().getTime() - (24 * 60 * 60 * 1000));
         const [daily, allTime] = await Promise.all([
           prisma.leaderboard.findMany({
             where: {
@@ -96,7 +93,6 @@ export default async function handler(
     }
   } catch (err: unknown) {
     if (err instanceof Error) {
-      // eslint-disable-next-line no-console
       console.error(err.message);
 
       res.status(500).json({

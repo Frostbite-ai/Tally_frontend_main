@@ -14,7 +14,6 @@ export default async function handler(
     switch (req.method) {
       case 'GET':
         if (session && session.user?.email) {
-          // eslint-disable-next-line no-case-declarations
           const [best, recent] = await Promise.all([
             prisma.leaderboard.findMany({
               where: {
@@ -74,7 +73,6 @@ export default async function handler(
     }
   } catch (err: unknown) {
     if (err instanceof Error) {
-      // eslint-disable-next-line no-console
       console.error(err.message);
 
       res.status(500).json({
