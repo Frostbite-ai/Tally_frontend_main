@@ -22,12 +22,12 @@ This project was bootstrapped with [this template](https://github.com/theodorusc
 
 ## Screenshots
 
-![Desktop Screenshot 1](https://i.ibb.co/VJ85xNr/image.png)
+![Desktop Screenshot 1](https://i .ibb.co/VJ85xNr/image.png)
 
 <details>
   <summary>Click to expand!</summary>
   
-  ![Desktop Screenshot 2](https://i.ibb.co/VJ85xNr/image.png)
+  ![Desktop Screenshot 2](https://i .ibb.co/VJ85xNr/image.png)
 </details>
 
 ## Setup
