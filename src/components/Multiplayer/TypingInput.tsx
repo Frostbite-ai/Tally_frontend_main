@@ -16,7 +16,6 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
     const [duration, setDuration] = useState(() => 0);
     const [isFocused, setIsFocused] = useState(() => false);
     const letterElements = useRef<HTMLDivElement>(null);
-    // eslint-disable-next-line unused-imports/no-unused-vars
     const [currentTime, setCurrentTime] = useState(() => Date.now());
 
     const {

@@ -22,6 +22,8 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
     const [isFocused, setIsFocused] = useState(() => false);
     const letterElements = useRef<HTMLDivElement>(null);
     const [timeLeft, setTimeLeft] = useState(() => parseInt(time));
+    const [realTimeWpm, setRealTimeWpm] = useState(0); // Add state for real-time WPM
+
 
     const { user } = useProfile();
 
@@ -75,8 +77,9 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
       setTimeLeft(parseInt(time));
       endTyping();
       resetTyping();
+      setRealTimeWpm(0); // Reset real-time WPM when the text or time changes
     }, [text, time]);
-
+    
     // handle timer
     useEffect(() => {
       const timerInterval = setInterval(() => {
@@ -93,18 +96,31 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
       if (phase === 2) {
         clearInterval(timerInterval);
       }
-
       return () => clearInterval(timerInterval);
     }, [startTime, phase]);
+    
+// Add a new effect for updating real-time WPM
+useEffect(() => {
+  let timeoutId: NodeJS.Timeout | undefined;
+  if (phase === 1 && startTime) { // Only when typing is in progress
+    const updateWpm = () => {
+      const elapsedSec = (Date.now() - startTime) / 1000; // Calculate elapsed time
+      const wpm = Math.round(((60 / elapsedSec) * correctChar) / 5); // Calculate real-time WPM
+      setRealTimeWpm(wpm); // Update real-time WPM
+      timeoutId = setTimeout(updateWpm, 1000);
+    };
+    updateWpm(); // Start the recursive function
+  }
+  return () => timeoutId && clearTimeout(timeoutId); // Clean up on unmount or when the dependencies change
+}, [phase, startTime, correctChar]); // correctChar added to dependencies
 
+    
     //set WPM
     useEffect(() => {
       if (phase === 2 && endTime && startTime) {
         const dur = Math.floor((endTime - startTime) / 1000);
         setDuration(dur);
-
-        // todo: create leaderboard
-        // name: user?.name || localStorage?.getItem('nickname') || 'guest',
+    
         createLeaderboardData({
           name: localStorage?.getItem('nickname') || 'guest',
           wpm: Math.round(((60 / dur) * correctChar) / 5),
@@ -140,9 +156,38 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
             )}
           ></div>
         )}
-        <span className='absolute left-0 -top-[3.25rem] z-40 text-4xl text-fg/80'>
-          {timeLeft}
+        
+ 
+
+
+        <div className='flex flex-col -mt-8'>
+    <div className='flex justify-between items-center mb-1'>
+        <span className='timeleft z-40 text-4xl text-fg/80'>
+            {timeLeft}
         </span>
+        <span className='text-sm text-fg'>
+    {(phase === 1 ? realTimeWpm : Math.round(((60 / duration) * correctChar) / 5)) || 0} wpm 
+  </span>    </div>
+    
+    <div className='progressbar flex-grow mb-4'>
+        <div className='h-2 w-full overflow-hidden rounded-lg bg-hl/40 xs:min-w-[350px]'>
+            <div
+                className='h-full rounded-lg bg-fg transition-all duration-500'
+                style={{
+                  width: `${Math.min((correctChar / 500) * 100, 100)}%`,
+                }}
+            ></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
 
         <div
           className={clsx(
@@ -220,11 +265,11 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
               style={
                 margin > 0
                   ? {
-                      marginTop: -(margin * 39),
-                    }
+                    marginTop: -(margin * 39),
+                  }
                   : {
-                      marginTop: 0,
-                    }
+                    marginTop: 0,
+                  }
               }
             >
               {text.split('').map((letter, index) => {
@@ -233,16 +278,15 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
                   state === 0
                     ? 'text-font'
                     : state === 1
-                    ? 'text-fg'
-                    : 'text-hl border-b-2 border-hl';
+                      ? 'text-fg'
+                      : 'text-hl border-b-2 border-hl';
                 return (
                   <span
                     key={letter + index}
-                    className={`${color} ${
-                      state === 0 &&
+                    className={`${color} ${state === 0 &&
                       index < currIndex &&
                       'border-b-2 border-hl text-hl'
-                    }`}
+                      }`}
                   >
                     {letter}
                   </span>
@@ -295,6 +339,13 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
                 %
                 <span className='absolute -bottom-4 right-1 text-sm'>
                   ACCURACY
+                </span>
+              </span>
+              <span className='relative text-4xl'>
+              {Math.min((correctChar / 500) * 100, 100)}
+                %
+                <span className='absolute -bottom-4 right-1 text-sm'>
+                  COMPLETED
                 </span>
               </span>
             </div>

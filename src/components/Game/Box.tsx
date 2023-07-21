@@ -40,6 +40,7 @@ export default function Box() {
   return (
     <>
       {/* Box */}
+      
       <TypingInput ref={inputRef} text={list.join(' ')} time={time} />
 
       {/* Restart Button */}
