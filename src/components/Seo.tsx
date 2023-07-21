@@ -3,18 +3,14 @@ import { useRouter } from 'next/router';
 
 // !STARTERCONF Change these default meta
 const defaultMeta = {
-  title: 'Monkeytype Clone',
-  siteName: 'Monkeytype Clone',
+  title: 'Keyboard Kombat',
+  siteName: 'Keyboard Kombat',
   description: 'A typeracer app based on Monkeytype',
-  /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
-  url: 'https://monkeytype-clone.vercel.app',
+  url: 'https://tally-frontend-main.vercel.app/',
   type: 'website',
   robots: 'follow, index',
-  /**
-   * No need to be filled, will be populated with openGraph function
-   * If you wish to use a normal image, just specify the path below
-   */
-  image: 'https://monkeytype-clone.vercel.app/images/large-og.png',
+
+  image: 'https://tally-frontend-main.vercel.app/images/large-og.png',
 };
 
 type SeoProps = {

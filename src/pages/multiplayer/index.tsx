@@ -92,7 +92,7 @@ export default function MultiplayerPage() {
             <div className='relative mb-8 flex h-8 w-full max-w-[800px] items-center justify-between'>
               
             </div>
-            <div className='flex w-full flex-col gap-4'>
+            {/* <div className='flex w-full flex-col gap-4'>
               <RiTeamFill className='self-center text-[5rem] text-fg' />
               <h1 className='mb-2'>multiplayer mode</h1>
               <FormProvider {...methods}>
@@ -177,7 +177,7 @@ export default function MultiplayerPage() {
                   )}
                 </Button>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
       </main>

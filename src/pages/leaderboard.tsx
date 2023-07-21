@@ -38,7 +38,7 @@ export default function LeaderboardPage() {
           <div className={clsx('layout min-h-[65vh] pt-10')}>
             <div className='flex flex-wrap items-center justify-between gap-2 xs:whitespace-nowrap'>
               <ArrowLink direction='left' className='my-4 text-hl' href='/'>
-                back to home
+                home
               </ArrowLink>
               {!user && (
                 <Link href='/account'>
@@ -50,8 +50,8 @@ export default function LeaderboardPage() {
                 </Link>
               )}
             </div>
-            <h1 className='my-4 text-hl'>top 100 leaderboard</h1>
-            <div className='mb-4 flex space-x-2 font-primary'>
+            <h1 className='my-4 text-hl'>leaderboard</h1>
+            {/* <div className='mb-4 flex space-x-2 font-primary'>
               <button
                 onClick={() => setSelected('daily')}
                 className={clsx(
@@ -132,7 +132,7 @@ export default function LeaderboardPage() {
                     )}
                 </tbody>
               </table>
-            </div>
+            </div> */}
           </div>
         </section>
       </main>

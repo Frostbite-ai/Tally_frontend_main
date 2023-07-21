@@ -38,7 +38,7 @@ export default function AccountPage() {
             </ArrowLink>
             <h1 className='mb-4'>account</h1>
 
-            <AnimatePresence exitBeforeEnter>
+            {/* <AnimatePresence exitBeforeEnter>
               {user ? (
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -147,7 +147,7 @@ export default function AccountPage() {
                   <Login />
                 </motion.div>
               )}
-            </AnimatePresence>
+            </AnimatePresence> */}
           </div>
         </section>
       </main>

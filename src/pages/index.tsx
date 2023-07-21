@@ -23,7 +23,7 @@ export default function HomePage() {
 
   return (
     <AnimateFade>
-      <Seo title='Monkeytype Clone' />
+      <Seo title='Keyboard Kombat' />
 
       <main>
         <section>
@@ -32,21 +32,8 @@ export default function HomePage() {
               
             </div>
 
-            <div className='aspect-video w-full max-w-[450px] overflow-hidden rounded-lg ring-4 ring-fg ring-offset-4 ring-offset-bg'>
-              <iframe
-                src='https://www.youtube.com/embed/nnM9h7twXg8?autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&playlist=nnM9h7twXg8'
-                title='Monkeytype Clone'
-                frameBorder='0'
-                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                allowFullScreen
-                style={{
-                  width: '300%',
-                  height: '100%',
-                  marginLeft: '-100%',
-                  zIndex: 50,
-                }}
-              ></iframe>
-            </div>
+            <h1 className='mb-2'>Keyboard Kombat</h1>
+
             <FormProvider {...methods}>
               <Input
                 placeholder='enter your nickname'
@@ -59,7 +46,7 @@ export default function HomePage() {
                   if (!e.target.value) return;
                   dispatch({ type: 'SET_NICKNAME', payload: e.target.value });
                 }}
-                className='text-center'
+                className='text-center mt-20'
               />
             </FormProvider>
             <div className='flex items-center gap-4'>

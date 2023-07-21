@@ -82,7 +82,7 @@ export default function MultiplayerPage() {
 
   return (
     <AnimateFade>
-      <Seo title='Monkeytype Clone' />
+      <Seo title='Keyboard Kombat' />
 
       <main>
         <section>

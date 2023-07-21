@@ -16,14 +16,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [isClient, setIsClient] = React.useState(true);
 
   React.useEffect(() => {
-    setTimeout(() => setIsClient(false), 500);
+    setTimeout(() => setIsClient(false), 0);
   }, []);
 
   return (
     <>
       {isClient ? (
         <>
-          <Seo title='Monkeytype Clone' />
+          <Seo title='Keyboard Kombat' />
           <div
             className={clsx(
               theme,
@@ -33,12 +33,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           >
             <div className='flex max-w-[500px] flex-wrap items-center justify-center gap-x-8'>
               <div className='flex flex-col items-center gap-4'>
-                <CgSpinner className='animate-spin text-[3rem] text-fg' />
+              {/* <CgSpinner className='animate-spin text-[3rem] text-fg' /> */}
                 <p className='hidden'>
-                  Monkeytype Clone - Typeracer App based on Monkeytype
+                Keyboard Kombat - Typeracer App based on Monkeytype
                 </p>
                 <div className='loading font-primary text-fg'>
-                  Preparing the page for you...
+                  Loading...
                 </div>
               </div>
             </div>

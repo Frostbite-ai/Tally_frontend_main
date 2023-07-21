@@ -1,11 +1,10 @@
 /**
  * @type {import('next-sitemap').IConfig}
- * @see https://github.com/iamvishnusankar/next-sitemap#readme
+ * @see https://github.com/Frostbite-ai/Tally_frontend_main
  */
 module.exports = {
   // !STARTERCONF Change the siteUrl
-  /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
-  siteUrl: 'https://monkeytype-clone.vercel.app',
+  siteUrl: 'https://tally-frontend-main.vercel.app',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [{ userAgent: '*', allow: '/' }],

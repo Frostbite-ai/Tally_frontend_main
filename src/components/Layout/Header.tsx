@@ -42,30 +42,30 @@ export default function Header() {
           <Link href='/'>
             <a>
               <div className='flex space-x-1'>
-                <TbKeyboard
+                {/* <TbKeyboard
                   className={clsx(
                     'transition-colors duration-200 group-hover:text-hl',
                     [pathname === '/' ? 'text-hl' : 'text-hl/60'],
                     'text-4xl'
                   )}
-                />
+                /> */}
 
                 <div className='relative text-3xl font-bold text-fg'>
-                  <div
+                  {/* <div
                     className={clsx(
                       'absolute -top-3 left-0 text-[8px] transition-colors duration-200 group-hover:text-fg',
                       [pathname === '/' ? 'text-fg' : 'text-fg/60']
                     )}
                   >
                     just a clone of j
-                  </div>
+                  </div> */}
                   <span
                     className={clsx(
                       'transition-colors duration-200 group-hover:text-hl',
                       [pathname === '/' ? 'text-hl' : 'text-hl/60']
                     )}
                   >
-                    monkeytype
+                    Keyboard Kombat
                   </span>
                 </div>
               </div>
@@ -95,21 +95,7 @@ export default function Header() {
 
 
 
-            <div className='relative'>
-              <div className='peer'>
-                <Link href='/leaderboard'>
-                  <a className='flex items-center opacity-50 hover:opacity-100 transition-opacity duration-100'>
-                    <FaCrown
-                      className={clsx(
-                        'cursor-pointer fill-hl text-lg',
-                        { 'fill-hl': pathname === '/leaderboard' }
-                      )}
-                    />
-                    <span className='ml-2'>Leaderboard</span>
-                  </a>
-                </Link>
-              </div>
-            </div>
+            
 
 
             <div className='relative'>
@@ -123,6 +109,22 @@ export default function Header() {
                       )}
                     />
                     <span className='ml-2'>Multiplayer</span>
+                  </a>
+                </Link>
+              </div>
+            </div>
+
+            <div className='relative'>
+              <div className='peer'>
+                <Link href='/leaderboard'>
+                  <a className='flex items-center opacity-50 hover:opacity-100 transition-opacity duration-100'>
+                    <FaCrown
+                      className={clsx(
+                        'cursor-pointer fill-hl text-lg',
+                        { 'fill-hl': pathname === '/leaderboard' }
+                      )}
+                    />
+                    <span className='ml-2'>Leaderboard</span>
                   </a>
                 </Link>
               </div>

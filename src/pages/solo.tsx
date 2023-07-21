@@ -9,7 +9,7 @@ import Seo from '@/components/Seo';
 export default function SoloPage() {
   return (
     <AnimateFade>
-      <Seo title='Monkeytype Clone' />
+      <Seo title='Keyboard Kombat' />
 
       <main>
         <section>
