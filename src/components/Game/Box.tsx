@@ -8,7 +8,6 @@ import Tooltip from '@/components/Tooltip';
 import { usePreferenceContext } from '@/context/Preference/PreferenceContext';
 
 export default function Box() {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const _ = require('lodash');
 
   const {

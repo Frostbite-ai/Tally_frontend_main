@@ -2,7 +2,6 @@
 import clsx from 'clsx';
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
-import Link from 'next/link';
 import * as React from 'react';
 
 import useLeaderboard, { LeaderboardPayload } from '@/hooks/useLeaderboard';
@@ -67,7 +66,6 @@ export default function LeaderboardPage() {
                     <td className='py-3 pl-4 pr-4 md:pr-0'>#</td>
                     <td className='px-2 md:px-0'>user</td>
                     <td className='px-2 md:px-0'>wpm</td>
-                    <td className='hidden px-2 sm:table-cell md:px-0'>type</td>
                     <td className='hidden px-2 sm:table-cell md:px-0'>time</td>
                     <td className='px-2 md:px-0'>date</td>
                   </tr>
@@ -79,7 +77,7 @@ export default function LeaderboardPage() {
                   {selected === 'all time' &&
                     allTime?.map(
                       (leaderboard: LeaderboardPayload, index: number) => {
-                        const { wpm, time, type, createdAt, name, id } =
+                        const { wpm, time, createdAt, name, id } =
                           leaderboard;
                         const date = timeAgo.format(
                           new Date(createdAt as string)
@@ -91,7 +89,6 @@ export default function LeaderboardPage() {
                             index={index}
                             time={time}
                             wpm={wpm}
-                            type={type}
                             username={name}
                           />
                         );
@@ -100,7 +97,7 @@ export default function LeaderboardPage() {
                   {selected === 'daily' &&
                     daily?.map(
                       (leaderboard: LeaderboardPayload, index: number) => {
-                        const { id, wpm, time, type, createdAt, name } =
+                        const { id, wpm, time, createdAt, name } =
                           leaderboard;
                         const date = timeAgo.format(
                           new Date(createdAt as string)
@@ -112,7 +109,6 @@ export default function LeaderboardPage() {
                             index={index}
                             time={time}
                             wpm={wpm}
-                            type={type}
                             username={name}
                           />
                         );

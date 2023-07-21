@@ -47,10 +47,8 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
     const [margin, setMargin] = useState(() => 0);
     const [value, setValue] = useState(() => '');
 
-    // set cursor
     const pos = useMemo(() => {
       if (currIndex !== -1 && letterElements.current) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const spanref: any = letterElements.current.children[currIndex];
 
         const left = spanref.offsetLeft + spanref.offsetWidth - 2;
@@ -77,7 +75,6 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
       setTimeLeft(parseInt(time));
       endTyping();
       resetTyping();
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [text, time]);
 
     // handle timer
@@ -98,7 +95,6 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
       }
 
       return () => clearInterval(timerInterval);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [startTime, phase]);
 
     //set WPM
@@ -108,22 +104,20 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
         setDuration(dur);
 
         // todo: create leaderboard
+        // name: user?.name || localStorage?.getItem('nickname') || 'guest',
         createLeaderboardData({
-          name: user?.name || localStorage?.getItem('nickname') || 'guest',
+          name: localStorage?.getItem('nickname') || 'guest',
           wpm: Math.round(((60 / dur) * correctChar) / 5),
           time: parseInt(time),
-          type: type || 'words',
+          type: type || 'easy',
         });
       } else {
         setDuration(0);
       }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [phase, startTime, endTime, ref]);
 
-    //handle key presses
     const handleKeyDown = (letter: string, control: boolean) => {
       if (letter === 'Backspace') {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const spanref: any = letterElements?.current?.children[currIndex];
         const top = spanref?.offsetTop - 2;
 

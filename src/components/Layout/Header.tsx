@@ -10,7 +10,6 @@ import {
   FaUser,
 } from 'react-icons/fa';
 import { RiTeamFill } from 'react-icons/ri';
-import { TbKeyboard } from 'react-icons/tb';
 
 import useProfile from '@/hooks/useProfile';
 

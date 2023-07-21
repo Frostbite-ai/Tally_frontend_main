@@ -6,7 +6,6 @@ import clsxm from '@/lib/clsxm';
 type TableRowProps = {
   index: number;
   wpm: number;
-  type: string;
   time: number;
   date: string;
   username: string;
@@ -15,7 +14,6 @@ type TableRowProps = {
 const TableRow: React.FC<TableRowProps> = ({
   index,
   wpm,
-  type,
   time,
   date,
   username,
@@ -23,12 +21,11 @@ const TableRow: React.FC<TableRowProps> = ({
   return (
     <tr
       className={clsxm('whitespace-nowrap border-t-4 border-font/80', [
-        index % 2 === 0 ? 'bg-hl' : 'bg-hl/80',
+        index % 2 === 0 ? 'bg-hl' : 'bg-hl/20',
       ])}
     >
-      <td className='py-3 pl-4'>
+      <td className='py-3 pl-4 bg-opacity-60'>
         <span className='text-bg'>
-          {/* first rank */}
           {index === 0 ? <FaCrown className='my-1' /> : index + 1}
         </span>
       </td>
@@ -39,19 +36,19 @@ const TableRow: React.FC<TableRowProps> = ({
         </div>
       </td>
 
-      <td className='px-2 text-bg md:px-0'>
-        <span className={clsxm('rounded-md bg-bg px-2 py-1 text-xs text-hl')}>
+      <td className='px-2 text-bg md:px-0 bg-opacity-60'>
+      <div className='flex items-center gap-2 text-bg'>
           {wpm} wpm
-        </span>
+        </div>
       </td>
 
-      <td className='hidden px-2 text-sm text-bg sm:table-cell md:px-0'>
-        {type}
-      </td>
-      <td className='hidden px-2 text-sm text-bg sm:table-cell md:px-0'>
+      <td className='hidden px-2 text-sm text-bg sm:table-cell md:px-0 bg-opacity-60'>
         {time}s
       </td>
-      <td className='px-2 text-sm text-bg md:px-0'>{date}</td>
+
+      <td className='px-2 text-sm text-bg md:px-0'>
+        {date}
+      </td>
     </tr>
   );
 };

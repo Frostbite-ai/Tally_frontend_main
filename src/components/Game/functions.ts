@@ -2,7 +2,6 @@ import numbers from '../../data/numbers.json';
 import sentences from '../../data/sentences.json';
 import words from '../../data/words.json';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const _ = require('lodash');
 
 export const shuffleList = (type: string) => {

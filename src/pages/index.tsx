@@ -36,7 +36,7 @@ export default function HomePage() {
   <div className="text-4xl font-bold text-center pt-24">
     <Typed
       strings={['Welcome to Keyboard Kombat 🕹', 'Crushing the bytes in Tally Codebrewers 2023']}
-      typeSpeed={40}
+      typeSpeed={30}
       backSpeed={50}
       loop
     />
@@ -47,7 +47,7 @@ export default function HomePage() {
                 autoComplete='off'
                 name='nickname'
                 id='nickname'
-                maxLength={14}
+                maxLength={20}
                 defaultValue={localStorage?.getItem('nickname') || ''}
                 onBlur={(e) => {
                   if (!e.target.value) return;
@@ -75,13 +75,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className='flex flex-col items-center justify-center gap-2 font-primary'>
-              <div className='flex items-center space-x-2 text-sm'>
-                <Kbd>tab</Kbd>
-                <span className='text-hl'> to restart test </span>
-              </div>
-
-            </div>
+         
           </div>
         </section>
       </main>
