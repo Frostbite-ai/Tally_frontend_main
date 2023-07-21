@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import * as React from 'react';
 import {
   FaCrown,
-  FaInfo,
   FaKeyboard,
   FaRegUser,
   FaTerminal,
@@ -15,7 +14,6 @@ import { TbKeyboard } from 'react-icons/tb';
 
 import useProfile from '@/hooks/useProfile';
 
-import Tooltip from '@/components/Tooltip';
 
 import { usePreferenceContext } from '@/context/Preference/PreferenceContext';
 
@@ -23,11 +21,15 @@ const typeList = ['words', 'sentences', 'numbers'];
 
 const timeList = ['15', '30', '45', '60', '120'];
 
+
+
 export default function Header() {
   const {
     preferences: { type, time },
     dispatch,
   } = usePreferenceContext();
+
+
 
   const { user } = useProfile();
 
@@ -55,7 +57,7 @@ export default function Header() {
                       [pathname === '/' ? 'text-fg' : 'text-fg/60']
                     )}
                   >
-                    just a clone of
+                    just a clone of j
                   </div>
                   <span
                     className={clsx(
@@ -76,71 +78,56 @@ export default function Header() {
             <div className='relative'>
               <div className='peer'>
                 <Link href='/solo'>
-                  <a>
+                  <a className='flex items-center opacity-50 hover:opacity-100 transition-opacity duration-100'>
                     <FaKeyboard
                       className={clsx(
-                        'cursor-pointer fill-hl/50 text-lg transition-colors duration-200 hover:fill-hl',
+                        'cursor-pointer fill-hl text-lg',
                         { 'fill-hl': pathname === '/solo' }
                       )}
                     />
+                    <span className='ml-2'>solo</span>
                   </a>
                 </Link>
               </div>
-              <Tooltip className='cursor-default peer-hover:translate-y-0 peer-hover:opacity-100'>
-                solo
-              </Tooltip>
             </div>
+
+
+
+
+
             <div className='relative'>
               <div className='peer'>
                 <Link href='/leaderboard'>
-                  <a>
+                  <a className='flex items-center opacity-50 hover:opacity-100 transition-opacity duration-100'>
                     <FaCrown
                       className={clsx(
-                        'cursor-pointer fill-hl/50 text-lg transition-colors duration-200 hover:fill-hl',
+                        'cursor-pointer fill-hl text-lg',
                         { 'fill-hl': pathname === '/leaderboard' }
                       )}
                     />
+                    <span className='ml-2'>Leaderboard</span>
                   </a>
                 </Link>
               </div>
-              <Tooltip className='cursor-default peer-hover:translate-y-0 peer-hover:opacity-100'>
-                leaderboard
-              </Tooltip>
             </div>
-            <div className='relative'>
-              <div className='peer'>
-                <Link href='/about'>
-                  <a>
-                    <FaInfo
-                      className={clsx(
-                        'cursor-pointer fill-hl/50 text-lg transition-colors duration-200 hover:fill-hl',
-                        { 'fill-hl': pathname === '/about' }
-                      )}
-                    />
-                  </a>
-                </Link>
-              </div>
-              <Tooltip className='cursor-default peer-hover:translate-y-0 peer-hover:opacity-100'>
-                about
-              </Tooltip>
-            </div>
+
+
             <div className='relative'>
               <div className='peer'>
                 <Link href='/multiplayer'>
-                  <a>
+                  <a className='flex items-center opacity-50 hover:opacity-100 transition-opacity duration-100'>
                     <RiTeamFill
                       className={clsx(
-                        'cursor-pointer fill-hl/50 text-lg transition-colors duration-200 hover:fill-hl',
+                        'cursor-pointer fill-hl text-lg',
                         { 'fill-hl': pathname === '/multiplayer' }
                       )}
                     />
+                    <span className='ml-2'>Multiplayer</span>
                   </a>
                 </Link>
               </div>
-              <Tooltip className='cursor-default peer-hover:translate-y-0 peer-hover:opacity-100'>
-                multiplayer
-              </Tooltip>
             </div>
+
             <div className='relative'>
               <div className='peer'>
                 <Link href='/account'>
@@ -174,9 +161,7 @@ export default function Header() {
                   </a>
                 </Link>
               </div>
-              <Tooltip className='cursor-default peer-hover:translate-y-0 peer-hover:opacity-100'>
-                account
-              </Tooltip>
+
             </div>
           </div>
           <div className='hidden flex-col -space-y-1 sm:space-y-1 ns:flex'>
@@ -185,9 +170,8 @@ export default function Header() {
                 <div
                   onClick={() => dispatch({ type: 'SET_TYPE', payload: item })}
                   key={item}
-                  className={`${
-                    item === type ? 'text-hl' : 'text-hl/50'
-                  } transition-colors duration-200 hover:text-hl`}
+                  className={`${item === type ? 'text-hl' : 'text-hl/50'
+                    } transition-colors duration-200 hover:text-hl`}
                 >
                   {item}
                 </div>
@@ -198,9 +182,8 @@ export default function Header() {
                 <div
                   onClick={() => dispatch({ type: 'SET_TIME', payload: item })}
                   key={item}
-                  className={`${
-                    item === time ? 'text-hl' : 'text-hl/50'
-                  } transition-colors duration-200 hover:text-hl`}
+                  className={`${item === time ? 'text-hl' : 'text-hl/50'
+                    } transition-colors duration-200 hover:text-hl`}
                 >
                   {item}
                 </div>

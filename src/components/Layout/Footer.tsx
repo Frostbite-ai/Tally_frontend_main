@@ -1,25 +1,55 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { FaCode } from 'react-icons/fa';
+import { FaCode, FaMoon, FaSun, FaFont } from 'react-icons/fa';
 
 import UnstyledLink from '@/components/Link/UnstyledLink';
+import { usePreferenceContext } from '@/context/Preference/PreferenceContext';
+
 
 export default function Footer() {
-  return (
+  const {
+    preferences: { theme, fontFamily },
+    dispatch,
+  } = usePreferenceContext();
+
+  const isDarkTheme = theme === 'halloween';
+
+  const handleThemeChange = () => {
+    dispatch({
+      type: 'SET_THEME',
+      payload: isDarkTheme ? 'plain' : 'halloween',
+    });
+  };
+
+  const handleFontChange = () => {
+    dispatch({
+      type: 'SET_FONT_FAMILY',
+      payload: fontFamily === 'chakra-petch' ? 'inter' : (fontFamily === 'inter' ? 'poppins' : 'chakra-petch'),
+    });
+  };  return (
     <footer
       className={clsx(
         'layout flex h-full justify-self-end bg-transparent pt-12 pb-8'
       )}
     >
-      <div className='flex w-full items-center justify-between font-primary'>
-        <UnstyledLink
+      <div className='flex w-full items-center  font-primary'>
+        {/* <UnstyledLink
           href='https://github.com/Frostbite-ai/Tally_frontend_main'
           className='flex cursor-pointer items-center space-x-1.5 text-sm text-fg/50 transition-colors duration-200 hover:text-fg'
         >
           <FaCode />
           <div>github</div>
-        </UnstyledLink>
-        <UnstyledLink
+        </UnstyledLink> */}
+        <button onClick={handleThemeChange} className='flex items-center space-x-1.5 text-sm text-fg/50 transition-colors duration-200 hover:text-fg'>
+          {isDarkTheme ? <FaSun /> : <FaMoon />}
+          <div>{isDarkTheme ? 'Light Mode' : 'Dark Mode'}</div>
+        </button>
+        {/* Font switcher button */}
+        <button onClick={handleFontChange} className='flex  items-center space-x-1.5 pl-5 text-sm text-fg/50 transition-colors duration-200 hover:text-fg'>
+          <FaFont />
+          <div>{fontFamily}</div>
+        </button>
+        {/* <UnstyledLink
           href='https://monkeytype.com'
           className='flex cursor-pointer items-center space-x-1.5 fill-hl/50 text-sm text-fg/50 transition-colors duration-200 hover:fill-hl hover:text-fg'
         >
@@ -43,7 +73,7 @@ export default function Footer() {
               <path d=' M -660 -910 L -680 -910 L -680 -980 C -680 -1007.596 -657.596 -1030 -630 -1030 L -430 -1030 C -402.404 -1030 -380 -1007.596 -380 -980 L -380 -900 C -380 -872.404 -402.404 -850 -430 -850 L -630 -850 C -657.596 -850 -680 -872.404 -680 -900 L -680 -920 L -660 -920 L -660 -900 C -660 -883.443 -646.557 -870 -630 -870 L -430 -870 C -413.443 -870 -400 -883.443 -400 -900 L -400 -980 C -400 -996.557 -413.443 -1010 -430 -1010 L -630 -1010 C -646.557 -1010 -660 -996.557 -660 -980 L -660 -910 Z '></path>
             </g>
           </svg>
-        </UnstyledLink>
+        </UnstyledLink> */}
       </div>
     </footer>
   );

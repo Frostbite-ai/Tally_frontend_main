@@ -1,4 +1,4 @@
-# Keyboard Kombat
+# Keyboard Kombat - byte crusaders - Tally Codebrewers 2023
 
 Welcome to our Keyboard Kombat App, a project developed for the Tally Codebrewers 2023 hackathon. This application is inspired by Monkeytype, with a similar UI and functionality, but with the added feature of multiplayer mode. 
 

@@ -12,7 +12,6 @@ import * as yup from 'yup';
 import { createRoom } from '@/lib/socket/roomHandler';
 
 import Button from '@/components/Button/Button';
-import ChatBox from '@/components/Chat/ChatBox';
 import Input from '@/components/Input';
 import AnimateFade from '@/components/Layout/AnimateFade';
 import Seo from '@/components/Seo';
@@ -91,10 +90,7 @@ export default function MultiplayerPage() {
         <section>
           <div className='layout flex min-h-[65vh] w-full flex-col items-center pt-10 text-center font-primary'>
             <div className='relative mb-8 flex h-8 w-full max-w-[800px] items-center justify-between'>
-              <ChatBox
-                className='right-3 w-[calc(100%+0.5rem)] sm:right-2'
-                label='public chat'
-              />
+              
             </div>
             <div className='flex w-full flex-col gap-4'>
               <RiTeamFill className='self-center text-[5rem] text-fg' />

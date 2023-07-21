@@ -5,7 +5,6 @@ import { IoMdPerson } from 'react-icons/io';
 import { RiTeamFill } from 'react-icons/ri';
 
 import Button from '@/components/Button/Button';
-import ChatBox from '@/components/Chat/ChatBox';
 import Input from '@/components/Input';
 import Kbd from '@/components/Kbd';
 import AnimateFade from '@/components/Layout/AnimateFade';
@@ -30,10 +29,7 @@ export default function HomePage() {
         <section>
           <div className='layout flex flex-col items-center gap-8 pt-8 text-center'>
             <div className='relative flex h-8 w-full max-w-[800px] items-center justify-between'>
-              <ChatBox
-                className='right-3 w-[calc(100%+2rem)] sm:right-2'
-                label='public chat'
-              />
+              
             </div>
 
             <div className='aspect-video w-full max-w-[450px] overflow-hidden rounded-lg ring-4 ring-fg ring-offset-4 ring-offset-bg'>

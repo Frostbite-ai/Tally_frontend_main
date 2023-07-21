@@ -61,12 +61,20 @@
   --fg-color: 242 223 58;
 }
 
-.halloween {
+/* .halloween {
   --bg-color: 27 26 23;
   --font-color: 74 69 76;
   --hl-color: 201 201 201;
   --fg-color: 245 136 64;
+} */
+
+.halloween {
+  --bg-color: 23 23 23; /* MKBHD background color */
+  --font-color: 74 69 76;
+  --hl-color: 201 201 201;
+  --fg-color: 218 0 55; /* MKBHD red */
 }
+
 
 .botanical {
   --bg-color: 75 134 115;
