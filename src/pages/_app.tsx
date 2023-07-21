@@ -10,7 +10,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import commands from '@/data/commands';
 
-import CommandPalette from '@/components/CommandPalette/CommandPalette';
 import Header from '@/components/Layout/Header';
 import Layout from '@/components/Layout/Layout';
 
@@ -29,7 +28,6 @@ function MyApp({
 }: AppProps) {
   return (
     <PreferenceProvider>
-      <CommandPalette data={commands} />
       <SessionProvider session={session}>
         <Layout>
           <ToastContainer

@@ -11,7 +11,6 @@ import {
 } from 'react-icons/fa';
 import { RiTeamFill } from 'react-icons/ri';
 
-import useProfile from '@/hooks/useProfile';
 
 
 import { usePreferenceContext } from '@/context/Preference/PreferenceContext';
@@ -33,7 +32,6 @@ export default function Header() {
 
 
 
-  const { user } = useProfile();
 
   const { pathname } = useRouter();
 

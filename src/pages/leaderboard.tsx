@@ -5,7 +5,6 @@ import en from 'javascript-time-ago/locale/en';
 import * as React from 'react';
 
 import useLeaderboard, { LeaderboardPayload } from '@/hooks/useLeaderboard';
-import useProfile from '@/hooks/useProfile';
 
 import AnimateFade from '@/components/Layout/AnimateFade';
 import TableRow from '@/components/Leaderboard/TableRow';
@@ -17,7 +16,6 @@ TimeAgo.addLocale(en);
 
 export default function LeaderboardPage() {
 
-  const { user } = useProfile();
   const { daily, allTime, isLoading } = useLeaderboard();
 
   const timeAgo = new TimeAgo('en-US');
