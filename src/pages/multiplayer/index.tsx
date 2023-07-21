@@ -129,7 +129,7 @@ export default function MultiplayerPage() {
                     [mode === 'words' ? 'text-hl ring-2 ring-fg' : 'text-hl']
                   )}
                 >
-                  words
+                  Hard
                 </button>
                 <button
                   onClick={() =>
@@ -144,7 +144,7 @@ export default function MultiplayerPage() {
                     ]
                   )}
                 >
-                  sentences
+                  Medium
                 </button>
                 <button
                   onClick={() =>
@@ -155,7 +155,7 @@ export default function MultiplayerPage() {
                     [mode === 'numbers' ? 'text-hl ring-2 ring-fg' : 'text-hl']
                   )}
                 >
-                  numbers
+                  Hard
                 </button>
               </div>
               <div className='flex items-center justify-center space-x-4'>

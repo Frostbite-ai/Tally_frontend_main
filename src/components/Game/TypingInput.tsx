@@ -342,7 +342,7 @@ useEffect(() => {
                 </span>
               </span>
               <span className='relative text-4xl'>
-              {Math.min((correctChar / 500) * 100, 100)}
+              {Math.min((correctChar / 500) * 100, 100).toFixed(2)}
                 %
                 <span className='absolute -bottom-4 right-1 text-sm'>
                   COMPLETED
