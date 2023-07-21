@@ -4,7 +4,6 @@ import { v4 } from 'uuid';
 export const createRoom = (
   socket: Socket,
   mode: 'words' | 'sentences' | 'numbers'
-  // mode: 'easy' | 'medium' | 'hard'
 
 ) => {
   const id = v4().slice(0, 6);

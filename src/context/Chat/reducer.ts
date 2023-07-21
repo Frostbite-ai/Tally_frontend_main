@@ -1,3 +1,4 @@
+type ChatState = any;
 
 const reducer = (state: ChatState): ChatState => {
   switch ("hi") {
@@ -5,8 +6,6 @@ const reducer = (state: ChatState): ChatState => {
       return {
         ...state,
       };
-
-   
   }
 };
 

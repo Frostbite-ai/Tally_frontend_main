@@ -119,41 +119,7 @@ export default function Header() {
               </div>
             </div>
 
-            <div className='relative'>
-              <div className='peer'>
-                <Link href='/account'>
-                  <a>
-                    <div className='group flex h-full cursor-pointer gap-2 transition-colors duration-200 '>
-                      {user ? (
-                        <FaUser
-                          className={clsx(
-                            'fill-hl/50 text-lg group-hover:fill-hl',
-                            { 'fill-hl': pathname === '/account' }
-                          )}
-                        />
-                      ) : (
-                        <FaRegUser
-                          className={clsx(
-                            'fill-hl/50 text-lg group-hover:fill-hl',
-                            { 'fill-hl': pathname === '/account' }
-                          )}
-                        />
-                      )}
-                      <span
-                        className={clsx(
-                          'relative bottom-[2px] hidden group-hover:text-hl xs:block',
-                          { 'text-hl': pathname === '/account' },
-                          { 'text-hl/70': pathname !== '/account' }
-                        )}
-                      >
-                        {user?.name}
-                      </span>
-                    </div>
-                  </a>
-                </Link>
-              </div>
-
-            </div>
+            
           </div>
           <div className='hidden flex-col -space-y-1 sm:space-y-1 ns:flex'>
             <div className='flex cursor-pointer list-none space-x-1.5 text-[10px] font-semibold sm:text-xs'>

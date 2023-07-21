@@ -50,7 +50,6 @@ const TypingInput = React.forwardRef<HTMLInputElement, TypingInputProps>(
       }
 
       dispatch({ type: 'SET_STATUS', payload: { wpm, progress } });
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentTime, isFinished]);
 
     const {
